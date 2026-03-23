@@ -69,6 +69,7 @@ const navTemplate = `
                 </div>
             </div>
 
+            <a href="/RGI/Consultancy/consultancy" class="hover:text-blue-300 transition py-2">CONSULTANCY</a>
             <a href="/RGI/Resources/resources" class="hover:text-blue-300 transition py-2">RESOURCES</a>
             <a href="/RGI/Gallery/gallery" class="hover:text-blue-300 transition py-2">GALLERY</a>
             <a href="/RGI/Testimonials/testimonials" class="hover:text-blue-300 transition py-2">TESTIMONIALS</a>
@@ -83,6 +84,7 @@ const navTemplate = `
             <a href="/RGI/About/about-us" class="hover:text-blue-300">ABOUT US</a>
             <a href="/RGI/Services/services" class="hover:text-blue-300">SERVICES</a>
             <a href="/RGI/Network/network" class="hover:text-blue-300">NETWORK</a>
+            <a href="/RGI/Consultancy/consultancy" class="hover:text-blue-300">CONSULTANCY</a>
             <a href="/RGI/Resources/resources" class="hover:text-blue-300">RESOURCES</a>
             <a href="/RGI/Gallery/gallery" class="hover:text-blue-300">GALLERY</a>
             <a href="/RGI/Testimonials/testimonials" class="hover:text-blue-300">TESTIMONIALS</a>
