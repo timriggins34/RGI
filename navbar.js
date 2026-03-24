@@ -3,24 +3,20 @@ const navTemplate = `
 <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         
-        <!-- CLICKABLE LOGO & NAME -->
         <a href="/RGI/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300">
             <img src="/RGI/Logo.png" alt="R G International Logo" class="h-10 md:h-12 w-auto object-contain">
             <img src="/RGI/Name.png" alt="R G International" class="h-6 md:h-8 w-auto object-contain">
         </a>
 
-        <!-- Hamburger Button for Mobile -->
         <button id="mobile-menu-btn" class="md:hidden text-blue-300 hover:text-white focus:outline-none">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
         </button>
 
-        <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6 text-sm font-semibold items-center">
             <a href="/RGI/" class="hover:text-blue-300 transition">HOME</a>
             
-            <!-- About Us Dropdown -->
             <div class="relative dropdown group py-2">
                 <a href="/RGI/About/about-us" class="hover:text-blue-300 transition flex items-center">ABOUT US ▾</a>
                 <div class="dropdown-menu absolute hidden bg-white text-slate-800 shadow-xl rounded mt-2 py-2 w-48 border border-slate-200">
@@ -30,7 +26,6 @@ const navTemplate = `
                 </div>
             </div>
 
-            <!-- Services Dropdown with Flyout -->
             <div class="relative dropdown group py-2">
                 <a href="/RGI/Services/services" class="hover:text-blue-300 transition flex items-center">SERVICES ▾</a>
                 <div class="dropdown-menu absolute hidden bg-white text-slate-800 shadow-xl rounded mt-2 py-2 w-72 border border-slate-200">
@@ -40,7 +35,6 @@ const navTemplate = `
                     <a href="/RGI/Services/logistics#freight" class="block px-4 py-1 pl-8 hover:bg-blue-50 hover:text-blue-700 text-sm">- Freight (Air/Ocean)</a>
                     <a href="/RGI/Services/logistics#domestic" class="block px-4 py-1 pl-8 hover:bg-blue-50 hover:text-blue-700 text-sm">- Domestic</a>
                     
-                    <!-- EXPANDED CERTIFICATIONS FLYOUT -->
                     <div class="group/cert relative mt-1">
                         <a href="/RGI/Services/Certifications/certifications" class="flex justify-between items-center px-4 py-2 hover:bg-blue-50 hover:text-blue-700 font-bold">
                             Certifications & Licences
@@ -60,7 +54,6 @@ const navTemplate = `
                 </div>
             </div>
 
-            <!-- Network Dropdown -->
             <div class="relative dropdown group py-2">
                 <a href="/RGI/Network/network" class="hover:text-blue-300 transition flex items-center">NETWORK ▾</a>
                 <div class="dropdown-menu absolute hidden bg-white text-slate-800 shadow-xl rounded mt-2 py-2 w-48 border border-slate-200">
@@ -77,18 +70,60 @@ const navTemplate = `
         </nav>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-blue-800 border-t border-blue-700">
         <nav class="flex flex-col px-4 py-4 space-y-4 text-sm font-semibold">
             <a href="/RGI/" class="hover:text-blue-300">HOME</a>
             <a href="/RGI/About/about-us" class="hover:text-blue-300">ABOUT US</a>
-            <a href="/RGI/Services/services" class="hover:text-blue-300">SERVICES</a>
-            <a href="/RGI/Network/network" class="hover:text-blue-300">NETWORK</a>
+            
+            <div class="flex flex-col">
+                <div class="flex justify-between items-center">
+                    <a href="/RGI/Services/services" class="hover:text-blue-300">SERVICES</a>
+                    <button id="mobile-services-btn" class="text-blue-300 hover:text-white p-1 focus:outline-none bg-blue-900/50 rounded">
+                        <svg class="w-5 h-5 transition-transform duration-300" id="mobile-services-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+                <div id="mobile-services-menu" class="hidden flex-col pl-4 mt-3 space-y-3 border-l border-blue-600 text-slate-200">
+                    <a href="/RGI/Services/customs-clearance" class="hover:text-white">Customs Clearance</a>
+                    <a href="/RGI/Services/logistics" class="hover:text-white">Freight & Logistics</a>
+                    
+                    <div class="flex flex-col mt-1">
+                        <div class="flex justify-between items-center">
+                            <a href="/RGI/Services/Certifications/certifications" class="hover:text-white text-sm">Certifications & Licences</a>
+                            <button id="mobile-cert-btn" class="text-blue-300 hover:text-white p-1 focus:outline-none">
+                                <svg class="w-5 h-5 transition-transform duration-300" id="mobile-cert-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                        </div>
+                        <div id="mobile-cert-menu" class="hidden flex-col pl-4 mt-2 space-y-3 border-l border-blue-500 text-slate-300 text-xs font-medium">
+                            <a href="/RGI/Services/Certifications/epcg-licences" class="hover:text-white">EPCG / Advance Licences</a>
+                            <a href="/RGI/Services/Certifications/epr-certification" class="hover:text-white">EPR Certification</a>
+                            <a href="/RGI/Services/Certifications/aeo-certification" class="hover:text-white">AEO Certification</a>
+                            <a href="/RGI/Services/Certifications/svb-registration" class="hover:text-white">SVB Registration</a>
+                            <a href="/RGI/Services/Certifications/moowr-scheme" class="hover:text-white">MOOWR Scheme</a>
+                            <a href="/RGI/Services/Certifications/self-sealing-permission" class="hover:text-white">Self-Sealing Permission</a>
+                            <a href="/RGI/Services/Certifications/other-certifications" class="hover:text-white">Other Certifications</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex justify-between items-center">
+                    <a href="/RGI/Network/network" class="hover:text-blue-300">NETWORK</a>
+                    <button id="mobile-network-btn" class="text-blue-300 hover:text-white p-1 focus:outline-none bg-blue-900/50 rounded">
+                        <svg class="w-5 h-5 transition-transform duration-300" id="mobile-network-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+                <div id="mobile-network-menu" class="hidden flex-col pl-4 mt-3 space-y-3 border-l border-blue-600 text-slate-200">
+                    <a href="/RGI/Network/presence" class="hover:text-white">Presence</a>
+                    <a href="/RGI/Network/ports-serviced" class="hover:text-white">Ports Serviced</a>
+                </div>
+            </div>
+
             <a href="/RGI/Consultancy/consultancy" class="hover:text-blue-300">CONSULTANCY</a>
             <a href="/RGI/Resources/resources" class="hover:text-blue-300">RESOURCES</a>
             <a href="/RGI/Gallery/gallery" class="hover:text-blue-300">GALLERY</a>
             <a href="/RGI/Testimonials/testimonials" class="hover:text-blue-300">TESTIMONIALS</a>
-            <a href="/RGI/Contact/contact-us" class="bg-blue-600 text-white px-4 py-2 rounded text-center w-full">CONTACT US</a>
+            <a href="/RGI/Contact/contact-us" class="bg-blue-600 text-white px-4 py-2 rounded text-center w-full mt-2">CONTACT US</a>
         </nav>
     </div>
 </header>
@@ -98,7 +133,7 @@ class Navbar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = navTemplate;
         
-        // Mobile menu toggle logic
+        // 1. Main Mobile Menu Toggle
         const btn = this.querySelector('#mobile-menu-btn');
         const menu = this.querySelector('#mobile-menu');
 
@@ -107,6 +142,26 @@ class Navbar extends HTMLElement {
                 menu.classList.toggle('hidden');
             });
         }
+
+        // 2. Accordion Logic Helper for nested mobile menus
+        const setupAccordion = (btnId, menuId, iconId) => {
+            const toggleBtn = this.querySelector(btnId);
+            const dropMenu = this.querySelector(menuId);
+            const icon = this.querySelector(iconId);
+            
+            if(toggleBtn && dropMenu && icon) {
+                toggleBtn.addEventListener('click', () => {
+                    dropMenu.classList.toggle('hidden');
+                    dropMenu.classList.toggle('flex');
+                    icon.classList.toggle('rotate-180'); // Flips the arrow upside down
+                });
+            }
+        };
+
+        // 3. Initialize Accordions
+        setupAccordion('#mobile-services-btn', '#mobile-services-menu', '#mobile-services-icon');
+        setupAccordion('#mobile-cert-btn', '#mobile-cert-menu', '#mobile-cert-icon');
+        setupAccordion('#mobile-network-btn', '#mobile-network-menu', '#mobile-network-icon');
     }
 }
 
@@ -126,7 +181,6 @@ const footerTemplate = `
         <div class="max-w-7xl mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Column 1: Company Info -->
                 <div>
                     <div class="flex items-center gap-3 mb-6">
                         <img src="/RGI/Logo.png" alt="R G International Logo" class="h-8 w-auto object-contain bg-white rounded p-1">
@@ -136,19 +190,16 @@ const footerTemplate = `
                         Your trusted Customs House Agent and logistics partner for seamless global trade, regulatory compliance, and end-to-end freight forwarding.
                     </p>
                     <div class="space-y-4 text-sm text-slate-400">
-                        <!-- CLICKABLE MAP ADDRESS -->
                         <p class="flex items-start gap-3">
                             <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> 
                             <a href="https://maps.app.goo.gl/9imtaF8yVLEym42R6" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition leading-relaxed inline-block">
                                 16, Queens Road, Vaishali Nagar,<br>Jaipur, Rajasthan 302021
                             </a>
                         </p>
-                        <!-- CLICKABLE EMAIL (MAILTO) -->
                         <p class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> 
                             <a href="mailto:rgintjaipur@gmail.com" class="hover:text-blue-400 transition">rgintjaipur@gmail.com</a>
                         </p>
-                        <!-- CLICKABLE PHONE (TEL) -->
                         <p class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> 
                             <a href="tel:+911412354577" class="hover:text-blue-400 transition">+91 (141) 235-4577</a>
@@ -156,7 +207,6 @@ const footerTemplate = `
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Links -->
                 <div class="md:pl-8">
                     <h3 class="text-white font-bold text-lg mb-6 border-b border-slate-700 pb-2 inline-block">Quick Links</h3>
                     <ul class="space-y-3 text-sm">
@@ -169,7 +219,6 @@ const footerTemplate = `
                     </ul>
                 </div>
 
-                <!-- Column 3: Core Expertise -->
                 <div>
                     <h3 class="text-white font-bold text-lg mb-6 border-b border-slate-700 pb-2 inline-block">Core Expertise</h3>
                     <ul class="space-y-3 text-sm">
@@ -183,10 +232,9 @@ const footerTemplate = `
             </div>
         </div>
         
-        <!-- Bottom Copyright Bar -->
         <div class="bg-slate-950 py-4 border-t border-slate-800">
             <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-                <p>&copy; 2026 R G International. All rights reserved.</p>
+                <p>© 2026 R G International. All rights reserved.</p>
                 <p class="mt-2 md:mt-0">Customs House Agent | Freight Forwarding | Regulatory Compliance</p>
             </div>
         </div>
