@@ -192,7 +192,7 @@ const footerTemplate = `
                     <div class="space-y-4 text-sm text-slate-400">
                         <p class="flex items-start gap-3">
                             <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> 
-                            <a href="https://maps.app.goo.gl/9imtaF8yVLEym42R6" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition leading-relaxed inline-block">
+                            <a href="https://maps.app.goo.gl/r55xXAq3z9YUvjeV8" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition leading-relaxed inline-block">
                                 16, Queens Road, Vaishali Nagar,<br>Jaipur, Rajasthan 302021
                             </a>
                         </p>
